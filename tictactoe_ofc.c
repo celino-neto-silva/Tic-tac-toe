@@ -32,7 +32,5 @@ void show_table()
 
 int main(void)
 {
-    create_table();
-    show_table();
     return 0;
 }
