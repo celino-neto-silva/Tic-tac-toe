@@ -1,0 +1,3 @@
+Tic-tac-toe, jogo da velha, ou jogo do Galo whatever... É um ótimo exercício para o iniciante em Programação e deveria ser criado na prática de qualquer linguagem.
+
+Neste desafio temos a oportunidade de trabalhar bem com os pilares da Algoritmia, as estruturas de repetição, controle, condição, variáveis multidimensionais e etc...
