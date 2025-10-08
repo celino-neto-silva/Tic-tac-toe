@@ -30,9 +30,26 @@ void show_table()
     }
 }
 
-int main(void)
+void game()
 {
     create_table();
-    show_table();
+    int c = 0;
+    char symbol;
+
+    while(1)
+    {
+        symbol = (c % 2 == 0) ? 'X' : 'O';
+        show_table();
+        jogada(symbol);
+        system("cls");
+        c++;
+        if(c == 5)
+            break;
+    }
+}
+
+int main(void)
+{
+    game();
     return 0;
 }
