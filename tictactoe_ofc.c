@@ -136,6 +136,7 @@ char check_winner()
 void jogada(char symbol)
 {
     int position;
+    int check = 0;
     do
     {
         printf("Jogador [%c]: ", symbol);
@@ -143,12 +144,17 @@ void jogada(char symbol)
     }
     while(position < 1 || position > 9);
 
-    int check = 0;
-    do
+    check = validate(position);
+
+    if(check == 0)
     {
-        check = validate(position);
+        do
+        {
+            printf("Jogador [%c]: ", symbol);
+            scanf("%d", &position);
+        }
+        while(validate(position) == 0);
     }
-    while(check == 0);
 
     insert_table(position, symbol);
 }
@@ -190,3 +196,4 @@ int main(void)
     game();
     return 0;
 }
+
