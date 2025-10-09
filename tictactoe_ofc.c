@@ -75,6 +75,75 @@ char jogada(char symbol)
     return position;
 }
 
+char check_winner()
+{
+    char check = '\0';
+
+    while(1)
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            if(table[i][0] == table[i][1] & table[i][1] == table[i][2])
+            {
+                check = table[i][0];
+                break;
+            }
+        }
+
+        if(check == 'X' || check == 'O')
+        {
+            break;
+        }
+
+        for(int i = 0; i < 3; i++)
+        {
+            if(table[0][i] == table[1][i] & table[1][i] == table[2][i])
+            {
+                check = table[0][i];
+                break;
+            }
+        }
+
+        if(check == 'X' || check == 'O')
+        {
+            break;
+        }
+
+        for(int i = 0; i < 3; i++)
+        {
+            if(table[0][0] == table[1][1] & table[1][1] == table[2][2])
+            {
+                check = table[0][0];
+                break;
+            }
+        }
+
+        if(check == 'X' || check == 'O')
+        {
+            break;
+        }
+
+        for(int i = 0; i < 3; i++)
+        {
+            if(table[0][2] == table[1][1] & table[1][1] == table[2][0])
+            {
+                check = table[0][2];
+                break;
+            }
+        }
+
+        if(check == 'X' || check == 'O')
+        {
+            break;
+        }
+        else
+        {
+            break;
+        }
+    }
+    return check;
+}
+
 void game()
 {
     create_table();
@@ -89,9 +158,22 @@ void game()
         position = jogada(symbol);
         insert_table(position, symbol);
         system("clear");
-        c++;
-        if(c == 5)
+        if(c > 4)
+        {
+            char winner = check_winner();
+
+            if(winner == 'X' || winner == 'O')
+            {
+                printf("Jogador %c! O vencedor\n", winner);
+                break;
+            }
+        }
+        else if(c == 9)
+        {
+            printf("Velha!\n");
             break;
+        }
+        c++;
     }
 }
 
