@@ -33,11 +33,7 @@ void show_table()
 int validate(int position)
 {
     int check = 0;
-<<<<<<< HEAD
     char position_char = position + '0';
-=======
-    char position_char = (char) position;
->>>>>>> 69fc6b47dae56fa215303b2aad2fcac9132a9d08
 
     for(int i = 0; i < 3; i++)
     {
@@ -53,7 +49,6 @@ int validate(int position)
     return check;
 }
 
-<<<<<<< HEAD
 void insert_table(int position, char symbol)
 {
     char position_char = position + '0';
@@ -138,8 +133,6 @@ char check_winner()
     return check;
 }
 
-=======
->>>>>>> 69fc6b47dae56fa215303b2aad2fcac9132a9d08
 void jogada(char symbol)
 {
     int position;
@@ -155,13 +148,9 @@ void jogada(char symbol)
     {
         check = validate(position);
     }
-<<<<<<< HEAD
     while(check == 0);
 
     insert_table(position, symbol);
-=======
-    while(check);
->>>>>>> 69fc6b47dae56fa215303b2aad2fcac9132a9d08
 }
 
 void game()
@@ -190,11 +179,8 @@ void game()
             }            
         }
         jogada(symbol);
-<<<<<<< HEAD
         system("cls");
         
-=======
->>>>>>> 69fc6b47dae56fa215303b2aad2fcac9132a9d08
         c++;
     }
 }
